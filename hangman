@@ -1,0 +1,33 @@
+guessWord = 'ventriloquist'
+guessProgress =[]
+tries =5
+for a in guessWord:
+  guessProgress = guessProgress + ['-']
+  
+    
+    
+print guessProgress
+
+
+while True:
+  cutTry = False  
+  guess = input('Write a letter')
+  for a in range(0,len(guessWord)):
+    if guessWord[a] == guess:
+      guessProgress[a] = guessWord[a]
+      cutTry = True
+  print guessProgress
+  if cutTry == False:
+    tries -=1
+    if tries ==0:
+      print"You didn't managed to guess the word"
+      break
+    print 'Tries ', tries*'*'
+    cutTry = True
+  if '-' not in guessProgress:
+    print'YOU WON!!!'
+    break
+    
+
+  
+  
